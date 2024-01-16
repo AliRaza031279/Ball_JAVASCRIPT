@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment</title>
+        <style>
+            div{
+                width: 100px;
+                height: 100px;
+                background-color: blue;
+                display: inline-block;
+            }
+            .circle{
+                border-radius: 90px;
+                background-color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = 'a1'>
+            <div  class="circle">
+
+            </div>
+        </div>
+        <div id = 'a2'>
+
+        </div>
+        <div id = 'a3'>
+            
+        </div>
+        <div id = 'a4'>
+            
+        </div><br>
+        <div id = 'a5'>
+
+        </div>
+        <div id = 'a6'>
+
+        </div>
+        <div id = 'a7'>
+            
+        </div>
+        <div id = 'a8'>
+            
+        </div><br>
+        <div id = 'a9'>
+            
+        </div>
+        <div id = 'a10'>
+
+        </div>
+        <div id = 'a11'>
+            
+        </div>
+        <div id = 'a12'>
+            
+        </div><br>
+        <div id = 'a13'>
+            
+        </div>
+        <div id = 'a14'>
+
+        </div>
+        <div id = 'a15'>
+            
+        </div>
+        <div id = 'a16'>
+            
+        </div>
+
+        <script>
+            document.onkeydown = act;
+            var e = document.getElementById('a1');
+            function act(event){
+                if(event.keyCode == '39'){
+                            e.removeChild(e.firstElementChild);
+                            let a = document.createElement('div');
+                            a.classList.add('circle');
+                            if(e.getAttribute('id') === 'a4')
+                            {
+                                e = e.previousElementSibling.previousElementSibling.previousElementSibling;
+                            }
+                            else if(e.getAttribute('id') === 'a8')
+                            {
+                                e = e.previousElementSibling.previousElementSibling.previousElementSibling;
+                            }
+                            else if(e.getAttribute('id') === 'a12')
+                            {
+                                e = e.previousElementSibling.previousElementSibling.previousElementSibling;
+                            }
+                            else if(e.getAttribute('id') === 'a16')
+                            {
+                                e = e.previousElementSibling.previousElementSibling.previousElementSibling;
+                            }
+                            else{
+                                e = e.nextElementSibling;
+                            }
+                            e.appendChild(a);
+                }
+                if(event.keyCode == '40'){
+                    e.removeChild(e.firstElementChild);
+                    let a = document.createElement('div');
+                    a.classList.add('circle');
+                    if(e.getAttribute('id') == 'a13' || e.getAttribute('id') == 'a14' || e.getAttribute('id') == 'a15' || e.getAttribute('id') == 'a16'){
+                        for(let i=0;i<15;i++){
+                            e = e.previousElementSibling;
+                        }
+                    }
+                    else{
+                        e = e.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling;
+                    }
+                    e.appendChild(a);
+                }
+            }
+        </script>
+    </body>
+</html>
